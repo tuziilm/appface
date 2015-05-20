@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+    
+  <description>appface functions library</description>
+  <display-name>appface functions</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>appface</short-name>
+  <uri>http://appface.zhanghui.com/jsp/jstl/functions</uri>
+
+  <function>
+    <description>
+      check the login user is admin or not
+    </description>
+    <name>isAdmin</name>
+    <function-class>com.zhanghui.appface.common.LoginContext</function-class>
+    <function-signature>boolean isAdmin()</function-signature>
+  </function>
+  <function>
+    <description>
+      LoginContext.getUid
+    </description>
+    <name>uid</name>
+    <function-class>com.zhanghui.appface.common.LoginContext</function-class>
+    <function-signature>java.lang.Integer getUid()</function-signature>
+  </function>
+  <function>
+    <description>
+      LoginContext.getUsername
+    </description>
+    <name>username</name>
+    <function-class>com.zhanghui.appface.common.LoginContext</function-class>
+    <function-signature>java.lang.String getUsername()</function-signature>
+  </function>
+    <function>
+        <description>
+            StringUtils.urlEncode
+        </description>
+        <name>urlEncode</name>
+        <function-class>com.zhanghui.appface.common.StringUtils</function-class>
+        <function-signature>java.lang.String urlEncode(java.lang.String)</function-signature>
+    </function>
+  <function>
+    <description>
+      StringUtils.defVal
+    </description>
+    <name>defVal</name>
+    <function-class>com.zhanghui.appface.common.StringUtils</function-class>
+    <function-signature>java.lang.Object defVal(java.lang.Object, java.lang.Object)</function-signature>
+  </function>
+  <function>
+    <description>
+      DateUtils.nowDateString
+    </description>
+    <name>nowDateString</name>
+    <function-class>com.zhanghui.appface.common.DateUtils</function-class>
+    <function-signature>java.lang.String nowDateString(java.lang.String)</function-signature>
+  </function>
+  <function>
+    <description>
+      DateUtils.yesterdayString
+    </description>
+    <name>yesterdayString</name>
+    <function-class>com.zhanghui.appface.common.DateUtils</function-class>
+    <function-signature>java.lang.String yesterdayString(java.lang.String)</function-signature>
+  </function>
+    <function>
+        <description>
+            DateUtils.dateStringAboutNow
+        </description>
+        <name>dateStringAboutNow</name>
+        <function-class>com.zhanghui.appface.common.DateUtils</function-class>
+        <function-signature>java.lang.String dateStringAboutNow(java.lang.String, int)</function-signature>
+    </function>
+  <function>
+    <description>
+      StringUtils.toGoogleChartData
+    </description>
+    <name>toGoogleChartData</name>
+    <function-class>com.zhanghui.appface.common.StringUtils</function-class>
+    <function-signature>java.lang.String toGoogleChartData(java.lang.String[][])</function-signature>
+  </function>
+  <function>
+    <description>
+        com.zhanghui.appface.common.LogModule.values
+    </description>
+    <name>logModules</name>
+    <function-class>com.zhanghui.appface.common.LogModule</function-class>
+    <function-signature>com.zhanghui.appface.common.LogModule[] values()</function-signature>
+  </function>
+</taglib>

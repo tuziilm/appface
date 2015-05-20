@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+    <!-- Documentation extras -->
+    <!--[if lt IE 9]>
+    <script src="scripts/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- Add sidebar CSS here -->
+    <link href="styles/simple-sidebar.css" rel="stylesheet">
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <!-- Add half-slider CSS here -->
+    <link href="styles/half-slider.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <title>《One by One》</title>
+    <link href="styles/poq.css" rel="stylesheet">
+    <style>
+        .hot_game_pic{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">《One by One》</li>
+            <li><a id="default_btn" href="index.html">首頁</a></li>
+            <li><a id="goods_btn" href="game.html">游戏</a></li>
+        </ul>
+    </div>
+
+    <!-- Page content -->
+    <div id="page-content-wrapper" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+        <div class="content-header">
+            <h1>
+                <a id="menu-toggle" href="#" class="btn btn-default glyphicon glyphicon-align-justify" style="margin-top: -10px;padding: 6px 12px 8px 12px;"><i class="icon-reorder"></i></a>
+                <span id='title'>《One by One》</span>
+            </h1>
+        </div>
+    </div><!-- /.container -->
+</div>
+
+<div id="myCarousel" class="carousel slide" style="padding-top: 66px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('images/game_ad_1.jpg');"></div>
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/game_ad_2.jpg');"></div>
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/game_ad_3.jpg');"></div>
+            <div class="carousel-caption">
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
+
+<div class="container">
+
+    <!-- index page start-->
+    <div id="index_panel">
+        <div class="row section" style="margin-bottom: 0px;">
+            <div class="col-lg-12">
+                <h2>游戏享不停 one by one</h2>
+                <p>
+                    找不到游戏玩，来这里<br/>
+                    更好玩的游戏等你来参与<br/>
+                    更有趣的游戏等你来闯关<br/>
+                    天天参与 乐趣享不停<br/>
+                </p>
+            </div>
+        </div>
+        <div class="row section" style="margin-bottom: 0px; margin-top: 0px;">
+            <div class="col-lg-12">
+                <h2>热门推荐</h2>
+                <div class="row section" style="margin-bottom: 0px; margin-top: 0px;">
+                    <h3>火柴人足球</h3>
+                    <div class="pics">
+                        <img class="hot_game_pic" src="images/game_zhuqiu_1.jpg">
+                    </div>
+                    <p>
+                        激情世界杯，与火柴人狂欢吧！
+                    </p>
+                </div>
+                <div class="row section" style="margin-bottom: 0px; margin-top: 0px;">
+                    <h3>小黄人快跑</h3>
+                    <div class="pics">
+                        <img class="hot_game_pic" src="images/game_xiaohuanren_1.jpg">
+                    </div>
+                    <p>
+                        快来与小黄人一起收集香蕉吧!
+                    </p>
+                    <h3>尽在one by one</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  index page end-->
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var w = $('#myCarousel').width();
+        var h = Math.round(w * 180 / 640);
+        $('#myCarousel').height( h );
+        console.log( "ready!" );
+    });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    //autoslider
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+</script>
+</body>
+</html>

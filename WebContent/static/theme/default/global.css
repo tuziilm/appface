@@ -1,0 +1,184 @@
+hr{
+	clear:both
+}
+footer{
+	clear: both
+}
+#errors{
+	color: red;
+	padding-left: 180px;
+}
+#msg{
+	color: blue;
+	padding-left: 180px;
+}
+.checkbox_td{
+	width:10px;
+}
+.toolbar{
+	margin: 0;
+}
+.pagination{
+	margin: 0;
+}
+.page-header {
+	padding-bottom: 10px;
+	margin: 10px 0;
+}
+.page-header h1 {
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1px;
+}
+#search_form{
+	margin: 0 0 10px;
+}
+#login_form .btn, h2{
+	margin-left: 100px;
+}
+.connected{
+	background-color: #51A351;
+	padding: 5px 3px;
+	color: white;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	cursor: default;
+}
+.notConnected{
+	background-color: #222;
+	padding: 5px 3px;
+	color: white;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	cursor: default;
+}
+.sr_checkbox{
+	display: inline;
+	line-height: 30px;
+	margin: 0 10px;
+}
+.sr_checkbox input{
+	vertical-align: text-bottom;
+}
+.remark{
+	color: grey;
+	margin-top: 10px;
+	margin-left:10px;
+}
+.redStar{
+	color: red;
+	margin:0 5px;
+	font-size: 20px;
+	vertical-align: text-top;
+}
+.descTextarea{
+	width: 400px;
+	height: 100px;
+}
+.contentTextarea{
+	width: 620px;
+	height: 380px;
+}
+.table .operation{
+	padding:0;
+}
+.table .operation a{
+	margin: 0 3px;
+	padding: 3px 3px;
+	line-height: 36px;
+	display: inline;
+}
+.operand1{
+	width: 64px;
+}
+.operand2{
+	width: 112px;
+}
+.operand3{
+    width: 170px;
+}
+.operand3-5{
+    width: 190px;
+}
+.operand4-5{
+	width: 250px;
+}
+#list li{
+	word-break: break-all;
+}
+#list td{
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.breakWord{
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.crossBtn{
+	margin-left: 10px;
+	cursor: pointer;
+}
+.table_img{
+	width:37px;
+	height:37px;
+}
+.ctrl_img{
+	width:37px;
+	height:37px;
+}
+.field_gap{
+	width:10px;
+	display: inline-block;
+}
+.multi_txt_div {
+	margin-top: 5px;
+	list-style: none;
+}
+.multi_txt_div ul{
+	margin: 0px;
+	padding: 0px;
+}
+.multi_txt_div ul li{
+	margin-right: 10px;
+	display: inline-block;
+	list-style: none;
+	color: #36c;
+}
+.xinhao{
+	color: red;
+	font-size: 20px;
+}
+
+.delLable{
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    padding: 2px 5px 2px 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.delIcon{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+}
+
+.input-bar{
+    padding: 3px 10px;
+}
+.input-bar label{
+    width: 80px;
+    margin-left: 10px;
+    text-align: right;
+}
+
+.change_log_textarea{
+    width: 400px;
+    height: 200px;
+}

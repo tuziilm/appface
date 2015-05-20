@@ -1,0 +1,18 @@
+.navbar-inverse {
+	background-color: #fff;
+	border-color: #fff;
+}
+
+.page-header {
+	padding-bottom: 9px;
+	margin: 19px 0 20px;
+	border-bottom: 1px solid #eee;
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+.sidebar-nav {
+	font-size: 1.6em;
+}

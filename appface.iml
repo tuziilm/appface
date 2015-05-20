@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/httpclient-4.2.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/httpclient-cache-4.2.2.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/WebContent/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/WebContent/WEB-INF/controllers.xml</file>
+          <file>file://$MODULE_DIR$/WebContent/WEB-INF/springMVC-servlet.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="httpclient-4.2.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/httpclient-4.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="httpclient-cache-4.2.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/WebContent/WEB-INF/lib/httpclient-cache-4.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" />
+          <root url="file://D:/lib/jedis/src/main/java" />
+          <root url="file://D:/lib/jedis/src/test/java" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/mybatis-3.1.1-sources.jar!/" />
+          <root url="jar://D:/lib/spring-framework-3.1.3.RELEASE/src/org.springframework.web-sources-3.1.3.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/mybatis-spring-1.1.1-sources.jar!/" />
+          <root url="jar://D:/lib/spring-framework-3.1.3.RELEASE/src/org.springframework.jdbc-sources-3.1.3.RELEASE.jar!/" />
+          <root url="jar://D:/lib/commons-lang3-3.1/commons-lang3-3.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/commons-fileupload-1.2.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/logback-core-1.0.9-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/guava-13.0.1-sources.jar!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.47" level="application_server_libraries" />
+  </component>
+</module>

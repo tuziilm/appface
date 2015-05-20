@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="MAIN"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/appface/work/logs/appface.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+            <charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+    <appender name="STATISTIC_FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/appface/work/logs/statistic.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+	<logger name="com.zhanghui.appface" level="INFO" />
+
+	<logger name="com.zhanghui.appface.common.LogStatistics" level="INFO"
+		additivity="false">
+		<appender-ref ref="STATISTIC_FILE" />
+	</logger>
+	
+	<root level="WARN">
+		<appender-ref ref="MAIN" />
+	</root>
+</configuration>

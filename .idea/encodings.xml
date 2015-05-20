@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/WebContent/pages/game/apk/spider.apk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/game/apk/xiaohuangren.apk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_3.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_4.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_ad_1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_ad_2.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_ad_3.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_xiaohuanren_1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_zhuqiu_1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_zhuqiu_2.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/game_zhuqiu_3.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/pages/images/hot.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/static/theme/default/global.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/zhanghui/appface/domain" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zhanghui/appface/domain/Id.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zhanghui/appface/domain/Size.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/zhanghui/appface/statistics/analyzer/LinkNodePvUvAnalyzer.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

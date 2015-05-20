@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhanghui.appface.persistence.PageViewMapper" >
+  <resultMap id="BaseResultMap" type="com.zhanghui.appface.domain.PageView" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="day" property="day" jdbcType="CHAR" />
+    <result column="module" property="module" jdbcType="CHAR" />
+    <result column="data" property="data" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <insert id="insertBatch">
+  	insert into page_view (day,module,data,gmt_create)
+  	values
+  	<foreach collection="list" item="item" index="index" separator=",">
+        (#{item.day,jdbcType=CHAR},#{item.module,jdbcType=CHAR},#{item.data,jdbcType=VARCHAR},now())
+    </foreach>
+  </insert>
+  
+  <delete id="deleteById">
+  	delete from page_view where id=#{id}
+  </delete>
+  <delete id="deleteByIds">
+  	delete from page_view where id in
+  	<foreach collection="array" item="ids"  open="(" separator="," close=")">  
+        #{ids}
+     </foreach> 
+  </delete>
+  
+  <update id="updateByIdSelective" parameterType="com.zhanghui.appface.domain.PageView">
+  	update page_view 
+  	<set>
+  		<if test="day!=null">
+  			day=#{day,jdbcType=CHAR},
+  		</if>
+  		<if test="module!=null">
+  			module=#{module,jdbcType=CHAR},
+  		</if>
+  		<if test="data!=null">
+  			data=#{data,jdbcType=VARCHAR}
+  		</if>
+  	</set>
+  	where id=#{id,jdbcType=INTEGER}
+  </update>
+  
+  <sql id="Base_Column_List">
+  	id,day,module,data
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/> from page_view
+  </select>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select <include refid="Base_Column_List" /> from page_view where id=#{id}
+  </select>
+  <select id="selectData" resultType="java.lang.String" >
+    select data from page_view where day=#{param1,jdbcType=VARCHAR} and module=#{param2,jdbcType=VARCHAR}
+  </select>
+</mapper>

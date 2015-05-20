@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhanghui.appface.persistence.DistributeAreaMapper" >
+    <resultMap id="BaseResultMap" type="com.zhanghui.appface.domain.DistributeArea" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="area_num" property="areaNum" jdbcType="INTEGER" />
+        <result column="ad_type_id" property="adTypeIds" jdbcType="VARCHAR" />
+        <result column="ad_id" property="adIds" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.zhanghui.appface.domain.DistributeArea">
+        insert into distribute_area(
+        `id`,
+        `area_num`,
+        `ad_id`,
+        `ad_type_id`,
+        `status`,
+        `remark`,
+        `gmt_create`)
+        values(
+        #{id,jdbcType=INTEGER},
+        #{areaNum,jdbcType=INTEGER},
+        #{adIds,jdbcType=VARCHAR},
+        #{adTypeIds,jdbcType=VARCHAR},
+        1,
+        #{remark,jdbcType=VARCHAR},
+        now())
+    </insert>
+
+    <delete id="deleteById">
+        delete from distribute_area where id=#{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByIds">
+        delete from distribute_area where id in
+        <foreach collection="array" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+
+    <update id="updateByIdSelective" parameterType="com.zhanghui.appface.domain.AdManage">
+        update distribute_area
+        <set>
+            <if test="fn.notNull(areaNum)">
+                area_num=#{areaNum,jdbcType=INTEGER},
+            </if>	
+            <if test="fn.notNull(adTypeIds)">
+                ad_type_id=#{adTypeIds,jdbcType=VARCHAR},
+            </if>
+            <if test="fn.notNull(adIds)">
+                ad_id=#{adIds,jdbcType=VARCHAR},
+            </if>
+            <if test="fn.notNull(status)">
+                status=#{status,jdbcType=TINYINT},
+            </if>
+            <if test="fn.notNull(remark)">
+                remark=#{remark,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <sql id="Base_Column_List">
+        `id`,
+        `area_num`,
+        `ad_type_id`,
+        `ad_id`,
+        `status`,
+        `remark`,
+        `gmt_create`,
+        `gmt_modified`
+    </sql>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from distribute_area order by area_num
+    </select>
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select <include refid="Base_Column_List"/> from distribute_area where id=#{id,jdbcType=INTEGER}
+    </select>
+</mapper>

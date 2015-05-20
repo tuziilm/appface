@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhanghui.appface.persistence.AreaManageMapper" >
+    <resultMap id="BaseResultMap" type="com.zhanghui.appface.domain.AreaManage" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="area" property="area" jdbcType="VARCHAR" />
+        <result column="ad_type" property="adType" jdbcType="INTEGER" />
+        <result column="area_num" property="areaNum" jdbcType="INTEGER" />
+        <result column="area_type" property="areaType" jdbcType="INTEGER" />
+        <result column="support_countries" property="supportCountries" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.zhanghui.appface.domain.AreaManage">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">SELECT LAST_INSERT_ID()</selectKey>
+        insert into area_manage(
+        `area`,
+        `ad_type`,
+        `area_num`,
+        `area_type`,
+        `support_countries`,
+        `status`,
+        `remark`,
+        `gmt_create`)
+        values(
+        #{area,jdbcType=VARCHAR},
+        #{adType,jdbcType=INTEGER},
+        #{areaNum,jdbcType=INTEGER},
+        #{areaType,jdbcType=INTEGER},
+        #{supportCountries,jdbcType=VARCHAR},
+        1,
+        #{remark,jdbcType=VARCHAR},
+        now())
+    </insert>
+
+    <delete id="deleteById">
+        delete from area_manage where id=#{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByIds">
+        delete from area_manage where id in
+        <foreach collection="array" item="ids"  open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+
+    <update id="updateByIdSelective" parameterType="com.zhanghui.appface.domain.AdManage">
+        update area_manage
+        <set>
+            <if test="fn.notNull(area)">
+                area=#{area,jdbcType=VARCHAR},
+            </if>
+            <if test="fn.notNull(adType)">
+                ad_type=#{adType,jdbcType=INTEGER},
+            </if>
+            <if test="fn.notNull(areaType)">
+                area_type=#{areaType,jdbcType=INTEGER},
+            </if>
+            <if test="fn.notNull(areaNum)">
+                area_num=#{areaNum,jdbcType=INTEGER},
+            </if>
+            <if test="fn.notNull(supportCountries)">
+            	support_countries=#{supportCountries,jdbcType=VARCHAR},
+            </if>
+            <if test="fn.notNull(remark)">
+                remark=#{remark,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where id=#{id,jdbcType=INTEGER}
+    </update>
+
+    <sql id="Base_Column_List">
+        `id`,
+        `area`,
+        `ad_type`,
+        `area_num`,
+        `area_type`,
+        `support_countries`,
+        `status`,
+        `remark`,
+        `gmt_create`,
+        `gmt_modified`
+    </sql>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from area_manage
+    </select>
+    <sql id="select_count_where_sql">
+        <where>
+            <if test="fn.notEmpty(query.name)">
+                name like #{query.name}
+            </if>
+        </where>
+    </sql>
+    <select id="count" resultType="java.lang.Integer" parameterType="com.zhanghui.appface.common.Paginator" >
+        select count(*)
+        from area_manage
+        <include refid="select_count_where_sql"/>
+    </select>
+    <select id="select" resultMap="BaseResultMap" parameterType="com.zhanghui.appface.common.Paginator" >
+        select
+        <include refid="Base_Column_List" />
+        from area_manage
+        <include refid="select_count_where_sql"/>
+        order by id desc limit #{start},#{sqlSize}
+    </select>
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select <include refid="Base_Column_List"/> from area_manage where id=#{id,jdbcType=INTEGER}
+    </select>
+</mapper>
