@@ -138,18 +138,30 @@ public class AdManageController
 			HttpServletRequest request, HttpServletResponse response) {
 		//执行更新或保存的操作
 		AdManage adManage = form.toObj();
-		try{
-			if(!form.adPic.isEmpty()){
-				String picture = UpLoads.upload(form.adPic, UploadType.PIC);
-				adManage.setPicture(picture);
-			}else{
-				adManage.setPicture("无");
-			}
-			if(!form.adIcon.isEmpty()){
-				String banner = UpLoads.upload(form.adIcon, UploadType.ICON);
-				adManage.setBanner(banner);
-			}else{
-				adManage.setBanner("无");
+		try {
+			//更新，如果有图片则上传，没有则不错任何处理，使用之前上传的图片
+			if (form.isModified()) {
+				if (!form.adPic.isEmpty()) {
+					String picture = UpLoads.upload(form.adPic, UploadType.PIC);
+					adManage.setPicture(picture);
+				}
+				if (!form.adIcon.isEmpty()) {
+					String banner = UpLoads.upload(form.adIcon, UploadType.ICON);
+					adManage.setBanner(banner);
+				}
+			}else {
+				if (!form.adPic.isEmpty()) {
+					String picture = UpLoads.upload(form.adPic, UploadType.PIC);
+					adManage.setPicture(picture);
+				} else {
+					adManage.setPicture("无");
+				}
+				if (!form.adIcon.isEmpty()) {
+					String banner = UpLoads.upload(form.adIcon, UploadType.ICON);
+					adManage.setBanner(banner);
+				} else {
+					adManage.setBanner("无");
+				}
 			}
 		}catch(UploadException e){
 			errors.addError(new ObjectError("upload", "上传失败！"));

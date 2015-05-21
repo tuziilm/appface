@@ -84,7 +84,7 @@
             <ref bean="timerTestDetail"/>  
         </property>  
         <property name="cronExpression">  
-            <value>0 0/1 * * * ?</value>  
+            <value>0 0/1 2 * * ?</value>
         </property>  
      </bean> 
     
